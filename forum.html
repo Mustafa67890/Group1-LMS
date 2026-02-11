@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion Forum - E-Learning Platform</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/forum.css">
+</head>
+
+<body>
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-circle">
+                    <i class="bi bi-book"></i>
+                </div>
+                <h5 class="mb-0 ms-2">E-Learning</h5>
+            </div>
+            <p class="sidebar-subtitle">Learn from Home</p>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <i class="bi bi-grid"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="courses.html" class="nav-item">
+                    <i class="bi bi-journal-text"></i>
+                    <span>Courses</span>
+                </a>
+                <a href="#resources" class="nav-item">
+                    <i class="bi bi-folder"></i>
+                    <span>Resource</span>
+                </a>
+                <a href="forum.html" class="nav-item active">
+                    <i class="bi bi-chat-dots"></i>
+                    <span>Chat</span>
+                </a>
+                <a href="#profile" class="nav-item">
+                    <i class="bi bi-person"></i>
+                    <span>Profile</span>
+                </a>
+                <a href="#settings" class="nav-item">
+                    <i class="bi bi-gear"></i>
+                    <span>Setting</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Navigation -->
+            <header class="top-nav">
+                <button class="btn btn-link mobile-menu-toggle" id="menuToggle">
+                    <i class="bi bi-list fs-4"></i>
+                </button>
+
+                <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search discussions..." class="form-control">
+                </div>
+
+                <div class="top-nav-right">
+                    <button class="btn btn-link position-relative">
+                        <i class="bi bi-bell fs-5"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <div class="user-profile">
+                        <img src="assets/images/user-avatar.jpg" alt="User" class="user-avatar" id="userAvatar">
+                        <span class="user-name">Amjad Hussain</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Forum Content -->
+            <div class="dashboard-content">
+                <!-- Page Header -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h2 class="fw-bold mb-1">Discussion Forum</h2>
+                        <p class="text-muted mb-0">Connect with peers and get help</p>
+                    </div>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newPostModal">
+                        <i class="bi bi-plus-circle me-2"></i>New Post
+                    </button>
+                </div>
+
+                <!-- Forum Categories -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="category-tabs">
+                            <button class="category-tab active" data-category="all">
+                                <i class="bi bi-grid"></i> All Discussions
+                            </button>
+                            <button class="category-tab" data-category="questions">
+                                <i class="bi bi-question-circle"></i> Questions
+                            </button>
+                            <button class="category-tab" data-category="help">
+                                <i class="bi bi-life-preserver"></i> Help Needed
+                            </button>
+                            <button class="category-tab" data-category="projects">
+                                <i class="bi bi-diagram-3"></i> Projects
+                            </button>
+                            <button class="category-tab" data-category="general">
+                                <i class="bi bi-chat"></i> General
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Discussion Posts -->
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="discussions-list">
+                            <!-- Post 1 -->
+                            <div class="discussion-post">
+                                <div class="post-avatar">
+                                    <img src="assets/images/user1.jpg" alt="User" id="forumUser1">
+                                </div>
+                                <div class="post-content">
+                                    <div class="post-header">
+                                        <h5 class="post-title">How do I create a strong password?</h5>
+                                        <span class="post-category badge bg-primary">Questions</span>
+                                    </div>
+                                    <p class="post-text">I'm learning about cybersecurity and want to make sure my
+                                        passwords are secure. What makes a password strong?</p>
+                                    <div class="post-meta">
+                                        <span class="post-author">Sarah Mwangi</span>
+                                        <span class="post-time"><i class="bi bi-clock"></i> 2 hours ago</span>
+                                        <span class="post-replies"><i class="bi bi-chat"></i> 5 replies</span>
+                                        <span class="post-likes"><i class="bi bi-heart"></i> 12 likes</span>
+                                    </div>
+                                    <div class="post-actions">
+                                        <button class="btn btn-sm btn-outline-primary">
+                                            <i class="bi bi-chat"></i> Reply
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-secondary">
+                                            <i class="bi bi-heart"></i> Like
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Post 2 -->
+                            <div class="discussion-post">
+                                <div class="post-avatar">
+                                    <img src="assets/images/user2.jpg" alt="User" id="forumUser2">
+                                </div>
+                                <div class="post-content">
+                                    <div class="post-header">
+                                        <h5 class="post-title">Need help with Word formatting</h5>
+                                        <span class="post-category badge bg-warning">Help Needed</span>
+                                    </div>
+                                    <p class="post-text">I'm working on Module 2 and can't figure out how to change the
+                                        line spacing in my document. Can someone help?</p>
+                                    <div class="post-meta">
+                                        <span class="post-author">John Kamau</span>
+                                        <span class="post-time"><i class="bi bi-clock"></i> 5 hours ago</span>
+                                        <span class="post-replies"><i class="bi bi-chat"></i> 8 replies</span>
+                                        <span class="post-likes"><i class="bi bi-heart"></i> 6 likes</span>
+                                    </div>
+                                    <div class="post-actions">
+                                        <button class="btn btn-sm btn-outline-primary">
+                                            <i class="bi bi-chat"></i> Reply
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-secondary">
+                                            <i class="bi bi-heart"></i> Like
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Post 3 -->
+                            <div class="discussion-post">
+                                <div class="post-avatar">
+                                    <img src="assets/images/user3.jpg" alt="User" id="forumUser3">
+                                </div>
+                                <div class="post-content">
+                                    <div class="post-header">
+                                        <h5 class="post-title">Looking for project partners!</h5>
+                                        <span class="post-category badge bg-success">Projects</span>
+                                    </div>
+                                    <p class="post-text">Anyone interested in collaborating on the Week 3 group project?
+                                        I have some ideas about creating a digital safety guide.</p>
+                                    <div class="post-meta">
+                                        <span class="post-author">Grace Njeri</span>
+                                        <span class="post-time"><i class="bi bi-clock"></i> 1 day ago</span>
+                                        <span class="post-replies"><i class="bi bi-chat"></i> 15 replies</span>
+                                        <span class="post-likes"><i class="bi bi-heart"></i> 24 likes</span>
+                                    </div>
+                                    <div class="post-actions">
+                                        <button class="btn btn-sm btn-outline-primary">
+                                            <i class="bi bi-chat"></i> Reply
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-secondary">
+                                            <i class="bi bi-heart"></i> Like
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Post 4 -->
+                            <div class="discussion-post">
+                                <div class="post-avatar">
+                                    <img src="assets/images/user4.jpg" alt="User" id="forumUser4">
+                                </div>
+                                <div class="post-content">
+                                    <div class="post-header">
+                                        <h5 class="post-title">Tips for staying safe online</h5>
+                                        <span class="post-category badge bg-info">General</span>
+                                    </div>
+                                    <p class="post-text">Just completed Module 3! Here are some key takeaways I learned
+                                        about safe browsing...</p>
+                                    <div class="post-meta">
+                                        <span class="post-author">David Ochieng</span>
+                                        <span class="post-time"><i class="bi bi-clock"></i> 2 days ago</span>
+                                        <span class="post-replies"><i class="bi bi-chat"></i> 10 replies</span>
+                                        <span class="post-likes"><i class="bi bi-heart"></i> 18 likes</span>
+                                    </div>
+                                    <div class="post-actions">
+                                        <button class="btn btn-sm btn-outline-primary">
+                                            <i class="bi bi-chat"></i> Reply
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-secondary">
+                                            <i class="bi bi-heart"></i> Like
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="col-lg-4">
+                        <!-- Top Contributors -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h6 class="mb-0"><i class="bi bi-trophy me-2"></i>Top Contributors</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="contributor-list">
+                                    <div class="contributor-item">
+                                        <img src="assets/images/contributor1.jpg" alt="Contributor"
+                                            class="contributor-avatar" id="contributor1">
+                                        <div class="contributor-info">
+                                            <p class="mb-0 fw-bold small">Grace Njeri</p>
+                                            <small class="text-muted">45 helpful replies</small>
+                                        </div>
+                                        <div class="contributor-badge">
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                        </div>
+                                    </div>
+                                    <div class="contributor-item">
+                                        <img src="assets/images/contributor2.jpg" alt="Contributor"
+                                            class="contributor-avatar" id="contributor2">
+                                        <div class="contributor-info">
+                                            <p class="mb-0 fw-bold small">Michael Chen</p>
+                                            <small class="text-muted">38 helpful replies</small>
+                                        </div>
+                                        <div class="contributor-badge">
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                        </div>
+                                    </div>
+                                    <div class="contributor-item">
+                                        <img src="assets/images/contributor3.jpg" alt="Contributor"
+                                            class="contributor-avatar" id="contributor3">
+                                        <div class="contributor-info">
+                                            <p class="mb-0 fw-bold small">Sarah Mwangi</p>
+                                            <small class="text-muted">32 helpful replies</small>
+                                        </div>
+                                        <div class="contributor-badge">
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Forum Guidelines -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6 class="mb-0"><i class="bi bi-info-circle me-2"></i>Forum Guidelines</h6>
+                            </div>
+                            <div class="card-body">
+                                <ul class="guidelines-list">
+                                    <li>Be respectful and supportive</li>
+                                    <li>Stay on topic</li>
+                                    <li>No spam or self-promotion</li>
+                                    <li>Help others when you can</li>
+                                    <li>Report inappropriate content</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- New Post Modal -->
+    <div class="modal fade" id="newPostModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create New Post</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="newPostForm">
+                        <div class="mb-3">
+                            <label class="form-label">Title</label>
+                            <input type="text" class="form-control" placeholder="What's your question or topic?">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Category</label>
+                            <select class="form-select">
+                                <option>Questions</option>
+                                <option>Help Needed</option>
+                                <option>Projects</option>
+                                <option>General</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Description</label>
+                            <textarea class="form-control" rows="5"
+                                placeholder="Provide details about your post..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Post</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/forum.js"></script>
+</body>
+
+</html>
